@@ -1,0 +1,5 @@
+const formT=document.getElementById('tarefaForm'),tabT=document.getElementById('tarefasTabela');
+(async()=>{try{await loadClientsInto('clienteId');await carregarTarefas();}catch(e){alert(e.message)}})();
+async function carregarTarefas(){const data=await request('/api/tarefas');tabT.innerHTML=data.map(t=>`<tr><td>${escapeHtml(t.Cliente||'-')}</td><td>${escapeHtml(t.Titulo)}</td><td>${escapeHtml(t.Descricao||'-')}</td><td>${dateOnly(t.Vencimento)}</td><td><button class="${t.Concluida?'secondary':'success'}" data-task="${t.Id}">${t.Concluida?'Reabrir':'Concluir'}</button></td></tr>`).join('');}
+formT.onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(formT));if(d.clienteId)d.clienteId=Number(d.clienteId);else d.clienteId=null;try{await request('/api/tarefas',{method:'POST',body:JSON.stringify(d)});formT.reset();await carregarTarefas();}catch(e){alert(e.message)}};
+tabT.onclick=async e=>{if(!e.target.dataset.task)return;try{await request(`/api/tarefas/${e.target.dataset.task}/concluir`,{method:'PATCH'});await carregarTarefas();}catch(e){alert(e.message)}};

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CRM | Oportunidades</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <aside class="sidebar">
+            <div class="brand">CRM</div>
+            <nav class="nav">
+                <a href="/">Dashboard</a>
+                <a href="/pages/clientes.html">Clientes</a>
+                <a href="/pages/contatos.html">Contatos</a>
+                <a class="active" href="/pages/oportunidades.html">Oportunidades</a>
+                <a href="/pages/tarefas.html">Tarefas</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <header>
+                <div>
+                    <h1>Oportunidades</h1>
+                    <div class="subtitle">Pipeline comercial</div>
+                </div>
+            </header>
+            <section class="panel">
+                <h2>Nova oportunidade</h2>
+                <form id="oportunidadeForm">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label>Cliente</label>
+                            <select name="clienteId" id="clienteId" required></select>
+                        </div>
+                        <div class="field">
+                            <label>Título</label>
+                            <input name="titulo" required>
+                        </div>
+                        <div class="field">
+                            <label>Valor</label>
+                            <input name="valor" type="number" min="0" step="0.01" value="0">
+                        </div>
+                        <div class="field">
+                            <label>Etapa</label>
+                            <select name="etapa">
+                                <option>Novo</option>
+                                <option>Qualificação</option>
+                                <option>Proposta</option>
+                                <option>Negociação</option>
+                                <option>Ganho</option>
+                                <option>Perdido</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button>Criar oportunidade</button>
+                    </div>
+                </form>
+            </section>
+            <section class="panel">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Título</th>
+                                <th>Valor</th>
+                                <th>Etapa</th>
+                                <th>Criação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oportunidadesTabela"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+        <script src="/js/api.js"></script>;
+        script src="/js/oportunidades.js"></script>;
+    </body>;
+;</html>;

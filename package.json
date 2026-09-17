@@ -1,0 +1,16 @@
+{
+  "name": "crm-sqlserver",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CRM web com HTML, CSS, JavaScript, Node.js e SQL Server",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "mssql": "^12.7.2"
+  }
+}

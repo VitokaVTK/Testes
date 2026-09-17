@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRM | Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="brand">CRM</div>
+
+        <nav class="nav">
+            <a class="active" href="/">Dashboard</a>
+            <a href="/pages/clientes.html">Clientes</a>
+            <a href="/pages/contatos.html">Contatos</a>
+            <a href="/pages/oportunidades.html">Oportunidades</a>
+            <a href="/pages/tarefas.html">Tarefas</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header>
+            <div>
+                <h1>Dashboard</h1>
+                <div class="subtitle">
+                    Visão geral do relacionamento com clientes
+                </div>
+            </div>
+
+            <div id="apiStatus" class="api-status">
+                Verificando banco...
+            </div>
+        </header>
+
+        <section class="cards">
+            <div class="card">
+                <small>Clientes</small>
+                <strong id="clientes">0</strong>
+            </div>
+
+            <div class="card">
+                <small>Oportunidades</small>
+                <strong id="oportunidades">0</strong>
+            </div>
+
+            <div class="card">
+                <small>Valor das oportunidades</small>
+                <strong id="valor">R$ 0,00</strong>
+            </div>
+
+            <div class="card">
+                <small>Tarefas pendentes</small>
+                <strong id="tarefas">0</strong>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Bem-vindo ao CRM</h2>
+
+            <p class="subtitle">
+                Use o menu lateral para cadastrar clientes, registrar contatos,
+                controlar oportunidades e acompanhar tarefas.
+            </p>
+        </section>
+    </main>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

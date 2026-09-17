@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CRM | Contatos</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            CRM
+        </div>
+
+        <nav class="nav">
+
+            <a href="../index.html">
+                Dashboard
+            </a>
+
+            <a href="./clientes.html">
+                Clientes
+            </a>
+
+            <a class="active" href="./contatos.html">
+                Contatos
+            </a>
+
+            <a href="./oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="./tarefas.html">
+                Tarefas
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main class="main">
+
+        <header>
+
+            <div>
+
+                <h1>
+                    Contatos
+                </h1>
+
+                <div class="subtitle">
+                    Histórico de interações com clientes
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="panel">
+
+            <h2>
+                Novo contato
+            </h2>
+
+            <form id="contatoForm">
+
+                <div class="form-grid">
+
+                    <div class="field">
+
+                        <label>
+                            Cliente
+                        </label>
+
+                        <select
+                            name="clienteId"
+                            id="clienteId"
+                            required
+                        ></select>
+
+                    </div>
+
+                    <div class="field">
+
+                        <label>
+                            Assunto
+                        </label>
+
+                        <input
+                            type="text"
+                            name="assunto"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="field full">
+
+                        <label>
+                            Descrição
+                        </label>
+
+                        <textarea
+                            name="descricao"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="actions">
+
+                    <button type="submit">
+                        Registrar contato
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Cliente
+                            </th>
+
+                            <th>
+                                Assunto
+                            </th>
+
+                            <th>
+                                Descrição
+                            </th>
+
+                            <th>
+                                Data
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="contatosTabela"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/contatos.js"></script>
+
+</body>
+</html>
